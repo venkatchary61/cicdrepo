@@ -34,7 +34,7 @@ jobs:
       uses: Azure/arm-deploy@v1.0.9
       with:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
-        scope: 'subscription'
+        scope: 'resourcegroup'
         subscriptionId: 66c4f000-9f32-4f19-8a94-8da1e61cf95f
         region: Australia East
         resourceGroupName: cicd
