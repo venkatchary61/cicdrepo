@@ -26,6 +26,6 @@ jobs:
     - name: Deploy resources
       uses: Azure/data-factory-deploy-action@v1.2.0
       with:
-        resourceGroupName: 'cicd'
+        resourceGroupName: cicd
         dataFactoryName: msazureadf-test
         armTemplateFile: ./msazureadf-dev/ARMTemplateForFactory.json
