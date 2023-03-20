@@ -28,6 +28,4 @@ jobs:
       with:
         resourceGroupName: cicd
         dataFactoryName: msazureadf-test
-        armTemplateFile: ./msazureadf-dev/ARMTemplateForFactory.json
-    - name: abcd
-      run: cat /home/runner/work/_actions/Azure/data-factory-deploy-action/v1.2.0/PrePostDeploymentScript.ps1
+        armTemplateFile: msazureadf-dev/ARMTemplateForFactory.json
