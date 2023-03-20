@@ -35,7 +35,7 @@ jobs:
       with:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
         scope: 'resourcegroup'
-        resourceGroupName: cicd
+        resourceGroupName: 'cicd'
         # Specify the path or URL to the Azure Resource Manager template.
         template: msazureadf-dev/ARMTemplateForFactory.json
         # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
