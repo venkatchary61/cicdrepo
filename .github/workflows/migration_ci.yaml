@@ -34,5 +34,6 @@ jobs:
       uses: Azure/arm-deploy@v1
       with:
         resourceGroupName: 'cicd'
-        dataFactoryName: msazureadf-test
         armTemplateFile: msazureadf-dev/ARMTemplateForFactory.json
+        parameters: 
+          factoryName=msazureadf-test
