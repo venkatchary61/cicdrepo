@@ -29,12 +29,18 @@ jobs:
       shell: pwsh
       run: pwsh -command ".github/workflows/PrePostDeploymentScript.ps1 -armTemplate msazureadf-dev/ARMTemplateForFactory.json  -ResourceGroupName cicd -DataFactoryName msazureadf-test -predeployment $true -deleteDeployment $false"
     
-            
-    - name: Deploy ADF ARM Templates
-      uses: Azure/arm-deploy@v1
+    
+    - name: Deploy Azure Resource Manager (ARM) Template
+      uses: Azure/arm-deploy@v1.0.9
       with:
-        scopr:'resourcegroup'
-        resourceGroupName:'cicd'
-        armTemplateFile:msazureadf-dev/ARMTemplateForFactory.json
-        parameters:
-          factoryName=msazureadf-test
+        # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
+        scope: 'resourcegroup'
+        resourceGroupName: cicd
+        # Specify the path or URL to the Azure Resource Manager template.
+        template: msazureadf-dev/ARMTemplateForFactory.json
+        # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
+        deploymentMode: Incremental
+        # Specifies the name of the resource group deployment to create.
+        # Supply deployment parameter values.
+        parameters: factoryName=msazureadf-test
+
