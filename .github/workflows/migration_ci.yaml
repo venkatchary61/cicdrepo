@@ -33,7 +33,8 @@ jobs:
     - name: Deploy ADF ARM Templates
       uses: Azure/arm-deploy@v1
       with:
-        resourceGroupName: 'cicd'
-        armTemplateFile: msazureadf-dev/ARMTemplateForFactory.json
-        parameters: 
+        scopr:'resourcegroup'
+        resourceGroupName:'cicd'
+        armTemplateFile:msazureadf-dev/ARMTemplateForFactory.json
+        parameters:
           factoryName=msazureadf-test
