@@ -24,6 +24,11 @@ jobs:
         creds: ${{secrets.AZURE_SPN}}
         enable-AzPSSession: true 
 
+    #Disable Triggers
+    - name: Run Pre-deployment script
+      shell: pwsh
+      run: pwsh -command "./PrePostDeploymentScript.ps1 -armTemplate msazureadf-dev/ARMTemplateForFactory.json  -ResourceGroupName cicd -DataFactoryName msazureadf-test -predeployment $true -deleteDeployment $false"
+    
             
     - name: Deploy resources
       uses: Azure/data-factory-deploy-action@v1.2.0
