@@ -36,6 +36,7 @@ jobs:
         # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
         scope: 'subscription'
         subscriptionId: 66c4f000-9f32-4f19-8a94-8da1e61cf95f
+        region: Australia East
         # Specify the path or URL to the Azure Resource Manager template.
         template: msazureadf-dev/ARMTemplateForFactory.json
         # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
